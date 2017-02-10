@@ -24,6 +24,11 @@ public AdvancedTechnology (String powerSource, String processingPower) {
     this.processingPower = processingPower;
 }
 
+public AdvancedTechnology () {
+    powerSource = "battery pack";
+    processingPower = "12 Jigahurtz";
+}
+
 
 // Getters
 

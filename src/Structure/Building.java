@@ -26,6 +26,12 @@ public Building (int height, int width, String material, int maxOccupants, int n
     this.temp = 0;
 }
 
+public Building () {
+    maxOccupants = 0;
+    numberOfFloors = 0;
+    temp = 0;
+}
+
 // Getters
 
 public int getMaxOccupants () {

@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package AdvancedTechnology;
+package AdvancedTechnologyAbastract;
 
 /**
  *
  * @author Owner
  */
-public class TimeMachine extends InterdimensionalVehicle {
+public class TimeMachineAbstract extends InterdimensionalVehicleAbstract {
     
 private String destinationYear;
 private String destinationLocation;
@@ -18,13 +18,13 @@ MessageService output = new MessageService();
 
 // Constructors
 
-public TimeMachine (String powerSource, String processingPower, int numberOfPassengers, String speed) {
+public TimeMachineAbstract (String powerSource, String processingPower, int numberOfPassengers, String speed) {
     super (powerSource, processingPower, numberOfPassengers, speed);
     this.destinationYear = "not set";
     this.destinationLocation = "not set";
 }
 
-public TimeMachine () {
+public TimeMachineAbstract() {
     destinationYear = "present";
     destinationLocation = "present location";
 }
@@ -77,6 +77,6 @@ public void engageTimeTravle (String destinationYear, String destinationLocation
     output.outputMessage("to " + getDestinationLocation() + " in the year " + getDestinationYear() + ".");
 }
     
-    
-    
+  
 }
+

@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package AdvancedTechnology;
+package AdvancedTechnologyAbastract;
+
 
 /**
  *
  * @author Owner
  */
-public class InterdimensionalVehicle extends AdvancedTechnology {
+ 
+public class InterdimensionalVehicleAbstract extends AdavancedTechnologyAbstract {
     
 private int numberOfPassengers;
 private String speed;
@@ -20,13 +22,13 @@ MessageService output = new MessageService();
 
 // constructors
 
-public InterdimensionalVehicle (String powerSource, String processingPower, int numberOfPassengers, String speed) {
+public InterdimensionalVehicleAbstract (String powerSource, String processingPower, int numberOfPassengers, String speed) {
     super (powerSource, processingPower);
     this.numberOfPassengers = numberOfPassengers;
     this.speed = speed;
 }
 
-public InterdimensionalVehicle () {
+public InterdimensionalVehicleAbstract () {
     numberOfPassengers = 1;
     speed = "1 decayear";
 }
@@ -64,6 +66,33 @@ public void setSpeed (String speed) {
     this.speed = speed;
     }
 }
+// Override methods from abstract parent class
+@Override
+public void setPowerSource(String powerSource) {
+    if (powerSource == null || powerSource.isEmpty() == true)
+    {
+    powerSource = "no power source";
+    throw new IllegalArgumentException ("Invalid PowerSource");
+    }
+    else
+    {
+        this.powerSource = powerSource;
+    }
+}
+
+@Override 
+public void setProcessingPower(String processingPower) {
+    if (processingPower == null || processingPower.isEmpty() == true)
+    {
+    processingPower = "no processing power";
+    throw new IllegalArgumentException ("Insufficient Processing Power");
+    }
+    else
+    {
+    this.processingPower = processingPower;
+    }
+}
+    
 
 // Methods
 @Override
@@ -80,7 +109,8 @@ public void turnOn () {
 
 public void travel () {
     output.outputMessage ("There are " + getNumberOfPassengers() + " traveling at " + getSpeed() + ".");
+}  
+
+
 }
-    
-    
-}
+

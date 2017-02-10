@@ -24,6 +24,13 @@ public Structure (int height, int width, String material) {
     this.material = material;
 }
 
+public Structure () {
+    height = 0;
+    width = 0;
+    area = getArea();
+    material = "none";
+}
+
 
 // Getters
 

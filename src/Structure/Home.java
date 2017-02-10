@@ -35,6 +35,13 @@ public Home (int height, int width, String material, int maxOccupants, int numbe
         }
 }
 
+public Home () {
+    hasBackyard = false;
+    hasGarage = false;
+    isHouse = true;
+    isApartment = false;
+}
+
 
 // Getters
 

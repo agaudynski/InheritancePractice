@@ -3,30 +3,36 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package AdvancedTechnology;
+package AdvancedTechnologyInterface;
+
+
 
 /**
  *
  * @author Owner
  */
-public class InterdimensionalVehicle extends AdvancedTechnology {
+ 
+public class InterdimensionalVehicleInterface implements AdavancedTechnologyInterface {
     
 private int numberOfPassengers;
 private String speed;
 private String processingPower;
 private String powerSource;
 
-MessageService output = new MessageService();
+MessageServiceInterface output = new MessageServiceInterface();
 
 // constructors
 
-public InterdimensionalVehicle (String powerSource, String processingPower, int numberOfPassengers, String speed) {
-    super (powerSource, processingPower);
+public InterdimensionalVehicleInterface (String powerSource, String processingPower, int numberOfPassengers, String speed) {
+    this.powerSource = powerSource;
+    this.processingPower = processingPower;
     this.numberOfPassengers = numberOfPassengers;
     this.speed = speed;
 }
 
-public InterdimensionalVehicle () {
+public InterdimensionalVehicleInterface () {
+    powerSource = "battery pack";
+    processingPower = "1 Jigahurt";
     numberOfPassengers = 1;
     speed = "1 decayear";
 }
@@ -39,6 +45,16 @@ public int getNumberOfPassengers () {
 
 public String getSpeed () {
     return speed;
+}
+
+@Override
+public String getPowerSource() {
+    return powerSource;
+}
+
+@Override
+public String getProcessingPower() {
+    return processingPower;
 }
 
 // Setters
@@ -65,6 +81,34 @@ public void setSpeed (String speed) {
     }
 }
 
+// Override methods from abstract parent class
+@Override
+public void setPowerSource(String powerSource) {
+    if (powerSource == null || powerSource.isEmpty() == true)
+    {
+    powerSource = "no power source";
+    throw new IllegalArgumentException ("Invalid PowerSource");
+    }
+    else
+    {
+        this.powerSource = powerSource;
+    }
+}
+
+@Override 
+public void setProcessingPower(String processingPower) {
+    if (processingPower == null || processingPower.isEmpty() == true)
+    {
+    processingPower = "no processing power";
+    throw new IllegalArgumentException ("Insufficient Processing Power");
+    }
+    else
+    {
+    this.processingPower = processingPower;
+    }
+}
+    
+
 // Methods
 @Override
 public void turnOn () {
@@ -80,7 +124,9 @@ public void turnOn () {
 
 public void travel () {
     output.outputMessage ("There are " + getNumberOfPassengers() + " traveling at " + getSpeed() + ".");
+}  
+
+
+
 }
-    
-    
-}
+
