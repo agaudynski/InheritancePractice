@@ -8,59 +8,57 @@ package lab1;
 
 import javax.swing.JOptionPane;
 /**
- *
  * @author      Alex Gaudynski
- * @version     1.00
  */
 public abstract class StandardSchoolCourse {
     
     private String courseNumber;
     private String courseName;
     private String prerequisites;
-    // private double credits;  // Not required for this super class    
+    private double credits;   
     
+    // Message Service Object
+    MessageService output = new MessageService();
     
     // Getters
     
-    public String getCourseNumber() {
+    public final String getCourseNumber() {
         return courseNumber;
     }
     
-    public  String getCourseName() {
+    public  final String getCourseName() {
         return courseName;
     }
         
-    public String getCapitalizedCourseName(){
+    public final String getCapitalizedCourseName(){
         return courseName.toUpperCase();
     }
      
     
-    public String getPrerequisites(){
+    public final String getPrerequisites(){
         return prerequisites;
     }
     
-    
+    // Set in each method as credits change per class
     public abstract double getCredits();
     
        
     // Setters
     
-    public final  void setCourseNumber (String courseNumber){
+    public void setCourseNumber (String courseNumber){
         if(courseNumber == null || courseNumber.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: courseNumber cannot be null of empty string");
-            System.exit(0);
+            output.outputMessage("Course Number cannot be null or empty.");
+            this.courseNumber = "0";
         }
         this.courseNumber = courseNumber.trim();
     }
  
     
     
-    public final void setCourseName(String courseName){
+    public void setCourseName(String courseName){
         if(courseName == null || courseName.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: courseName cannot be null of empty string");
-            System.exit(0);
+            output.outputMessage("Course Na e cannot be null or empty.");
+            this.courseName = "0";
         }
         this.courseName = courseName.trim();
     }
@@ -69,15 +67,14 @@ public abstract class StandardSchoolCourse {
     
     public void setPrerequisites(String prerequisites){
         if(prerequisites == null || prerequisites.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: prerequisites cannot be null of empty string");
-            System.exit(0);
+            output.outputMessage("Prerequisites cannot be null or empty.");
+            this.prerequisites = "0";
         }
         this.prerequisites = prerequisites.trim();
     }
     
     
-    
+    // Abstract method, declared in each subclass
     public abstract void setCredits(double credits);
     
     

@@ -4,9 +4,7 @@ import javax.swing.JOptionPane;
 
 /**
  * Describe responsibilities here.
- *
  * @author      Alex Gaudynski
- * @version     1.00
  */
 public class AdvancedJavaCourse extends StandardSchoolCourse {
     
@@ -14,7 +12,11 @@ public class AdvancedJavaCourse extends StandardSchoolCourse {
     //private String courseName;
     //private String courseNumber;
     //private String prerequisites;
-    private double credits;    
+    private double credits;   
+    
+    // Message Service Object
+    MessageService output = new MessageService();
+    
 
     // Constructor
     public AdvancedJavaCourse(String courseName, String courseNumber, String prerequisites) {
@@ -24,13 +26,12 @@ public class AdvancedJavaCourse extends StandardSchoolCourse {
     }
 
     
-    
+    // Set in class to allow for credit max variation
     @Override
     public void setCredits(double credits) {
-        if(credits < 0.5 || credits > 5.0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: credits must be in the range 0.5 to 5.0");
-            System.exit(0);
+        if(credits < 1.0 || credits > 5.0) {
+            output.outputMessage("Credits must be between 1 and 5.");
+            this.credits = 0;
         }
         else
         {

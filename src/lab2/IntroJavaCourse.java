@@ -4,8 +4,6 @@ import javax.swing.JOptionPane;
 
 /**
  * Describe responsibilities here.
- *
- * @author      your name goes here
  * @version     1.00
  */
 public class IntroJavaCourse implements GeneralCollegeCourse {
@@ -16,11 +14,13 @@ public class IntroJavaCourse implements GeneralCollegeCourse {
     private double credits;
     private String prerequisites;
 
+    // Message Service Object
+    MessageService output = new MessageService();    
     
     // Constructor
     public IntroJavaCourse(String courseName, String courseNumber) {
-        this.courseName = courseName;
-        this.courseNumber = courseNumber;
+        this.setCourseName(courseName);
+        this.setCourseNumber(courseNumber);
     }
 
     // Getters
@@ -56,20 +56,20 @@ public class IntroJavaCourse implements GeneralCollegeCourse {
     @Override
     public void setCourseNumber(String courseNumber) {
         if (courseNumber == null || courseNumber.length() == 0){
-            JOptionPane.showMessageDialog(null,
-                    "Error: courseNumber cannot be null of empty string");
+            output.outputMessage("Course Number cannot be null or empty.");
+            this.courseNumber = "0";
         }
         else
         {
-        this.courseNumber = courseNumber.trim();
+            this.courseNumber = courseNumber.trim();
         }
     }
 
     @Override
     public void setCredits(double credits) {
-        if (credits < 0.5 || credits > 4.0){
-            JOptionPane.showMessageDialog(null,
-                    "Error: credits must be between 0.5 and 4.0");
+        if (credits < 1.0 || credits > 4.0){
+            output.outputMessage("Credtis must be between 1 and 4.");
+            this.credits = 0;
         }
         else
         {
@@ -81,12 +81,12 @@ public class IntroJavaCourse implements GeneralCollegeCourse {
     @Override
     public void setPrerequisites(String prerequisites) {
         if (prerequisites == null || prerequisites.length() == 0){
-            JOptionPane.showMessageDialog(null,
-                    "Error: prerequisites cannot be null of empty string");
+            output.outputMessage("Prerequisites cannot be null or empty.");
+            this.prerequisites = "0";
         }
         else
         {
-        this.prerequisites = prerequisites.trim();
+            this.prerequisites = prerequisites.trim();
         }
     }
 
@@ -94,12 +94,12 @@ public class IntroJavaCourse implements GeneralCollegeCourse {
     @Override
     public void setCourseName(String courseName) {
         if (courseName == null || courseName.length() == 0){
-            JOptionPane.showMessageDialog(null,
-                    "Error: courseName cannot be null of empty string");
+            output.outputMessage("Course Name cannot be null or empty.");
+            this.courseName = "0";
         }
         else
         {
-        this.courseName = courseName.trim();
+            this.courseName = courseName.trim();
         }
     }
 

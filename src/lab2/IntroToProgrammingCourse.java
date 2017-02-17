@@ -15,6 +15,8 @@ public class IntroToProgrammingCourse implements GeneralCollegeCourse {
     private double credits;
     private String prerequisites;
 
+    // Message Service Object
+    MessageService output = new MessageService();    
     
     // Constructor
     public IntroToProgrammingCourse(String courseName, String courseNumber) {
@@ -57,46 +59,54 @@ public class IntroToProgrammingCourse implements GeneralCollegeCourse {
     @Override
     public void setCourseNumber(String courseNumber) {
         if(courseNumber == null || courseNumber.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: courseNumber cannot be null of empty string");
-            System.exit(0);
+            output.outputMessage("Course Number cannot be null or empty.");
+            this.courseNumber = "0";
         }
-        this.courseNumber = courseNumber;
+        else
+        {
+            this.courseNumber = courseNumber;
+        }
     }
 
 
     @Override
     public void setCredits(double credits) {
-        if(credits < 0.5 || credits > 4.0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: credits must be in the range 0.5 to 4.0");
-            System.exit(0);
+        if(credits < 1.0 || credits > 3.0) {
+            output.outputMessage("Credits must be between 1 and 3.");
+            this.credits = 0;
         }
-        this.credits = credits;
+        else
+        {
+            this.credits = credits;
+        }
     }
 
 
     @Override
     public void setCourseName(String courseName) {
         if(courseName == null || courseName.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: courseName cannot be null of empty string");
-            System.exit(0);
+            output.outputMessage("Course Name cannot be null or empty.");  
+            this.courseName = "0";
         }
-        this.courseName = courseName;
+        else
+        {
+            this.courseName = courseName;
         }
+    }
   
 
 
     @Override
     public void setPrerequisites(String prerequisites) {
         if(prerequisites == null || prerequisites.length() == 0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: courseName cannot be null of empty string");
-            System.exit(0);
+            output.outputMessage("Prerequisites cannot be null or empty."); 
+            this.prerequisites = "0";
         }
-        this.prerequisites = prerequisites;
+        else
+        {
+            this.prerequisites = prerequisites;
         }
+     }
 
     
 }
