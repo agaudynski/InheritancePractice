@@ -8,9 +8,7 @@ package lab1;
 
 import javax.swing.JOptionPane;
 /**
- *
  * @author      Alex Gaudynski
- * @version     1.00
  */
 public abstract class StandardSchoolCourse {
     
@@ -39,7 +37,7 @@ public abstract class StandardSchoolCourse {
         return prerequisites;
     }
     
-    
+    // Set in each method as credits change per class
     public abstract double getCredits();
     
        
@@ -77,7 +75,7 @@ public abstract class StandardSchoolCourse {
     }
     
     
-    
+    // Abstract method, declared in each subclass
     public abstract void setCredits(double credits);
     
     

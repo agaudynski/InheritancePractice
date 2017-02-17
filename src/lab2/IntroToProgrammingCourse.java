@@ -67,9 +67,9 @@ public class IntroToProgrammingCourse implements GeneralCollegeCourse {
 
     @Override
     public void setCredits(double credits) {
-        if(credits < 0.5 || credits > 4.0) {
+        if(credits < 0.5 || credits > 3.0) {
             JOptionPane.showMessageDialog(null,
-                    "Error: credits must be in the range 0.5 to 4.0");
+                    "Error: credits must be in the range 0.5 to 3.0");
             System.exit(0);
         }
         this.credits = credits;

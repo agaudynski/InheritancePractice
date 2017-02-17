@@ -6,7 +6,6 @@
 package lab2;
 
 /**
- *
  * @author Owner
  */
 public interface GeneralCollegeCourse {

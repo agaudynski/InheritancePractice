@@ -3,8 +3,6 @@ package lab1;
 import javax.swing.JOptionPane;
 
 /**
- * Describe responsibilities here.
- *
  * @author      Alex Gaudynski
  * @version     1.00
  */
@@ -23,7 +21,7 @@ public class IntroJavaCourse extends StandardSchoolCourse {
     }
 
     
-
+    // Set in class to allow for credit max variation
     @Override    
     public void setCredits(double credits) {
         if(credits < 0.5 || credits > 4.0) {

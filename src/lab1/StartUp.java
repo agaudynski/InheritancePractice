@@ -6,7 +6,6 @@
 package lab1;
 
 /**
- *
  * @author Owner
  */
 public class StartUp {
@@ -16,7 +15,7 @@ public class StartUp {
        
         // Declaration of new objects
         
-        StandardSchoolCourse introToProgramming = new IntroToProgrammingCourse("Intro to Programming", "111-111-111", "no prerequisites");
+        StandardSchoolCourse introToProgramming = new IntroToProgrammingCourse("Intro to Programming", "111-111-111");
         StandardSchoolCourse introToJava = new IntroJavaCourse("Intro to Java", "222-222-222", "Intro to Programming");
         StandardSchoolCourse advancedJava = new AdvancedJavaCourse("Advanced Java", "333-333-333", "Intro to Programing and Intro to Java");
         

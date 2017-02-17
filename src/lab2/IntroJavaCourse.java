@@ -4,8 +4,6 @@ import javax.swing.JOptionPane;
 
 /**
  * Describe responsibilities here.
- *
- * @author      your name goes here
  * @version     1.00
  */
 public class IntroJavaCourse implements GeneralCollegeCourse {
@@ -20,7 +18,7 @@ public class IntroJavaCourse implements GeneralCollegeCourse {
     // Constructor
     public IntroJavaCourse(String courseName, String courseNumber) {
         this.courseName = courseName;
-        this.courseNumber = courseNumber;
+        this.courseNumber = courseNumber; 
     }
 
     // Getters

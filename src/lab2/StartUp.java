@@ -22,8 +22,8 @@ public class StartUp {
         
         
         // Set prerequisites
-        introToJava.setPrerequisites("Intro to Programming");
-        advancedJava.setPrerequisites("Intro to Java");
+        introToJava.setPrerequisites(introToProgramming.getCourseName());
+        advancedJava.setPrerequisites(introToJava.getCourseName());
         
         
         // Set credits for each class
